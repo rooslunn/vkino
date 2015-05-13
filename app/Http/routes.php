@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+/**
+ * Landing page
+ */
+get('/', 'HomeController@index');
 
-Route::resource('api/city', 'API\CityController');
+/**
+ * API for frontend
+ */
+Route::pattern('api_resource', '[a-z0-9/]+');
+resource('api/{api_resource}', 'API\GatewayController');
+
 
 // Route::controllers([
 //     'auth' => 'Auth\AuthController',

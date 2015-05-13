@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Contracts\Gateway\Request as GatewayHelper;
 //use Illuminate\Http\Request;
 
-class CityController extends Controller
+class GatewayController extends Controller
 {
     protected $gateway;
 
@@ -17,10 +17,11 @@ class CityController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param $resource
      * @return string
      */
-    public function index()
+    public function index($resource)
     {
-        return $this->gateway->query('cities/all');
+        return $this->gateway->query($resource);
     }
 }

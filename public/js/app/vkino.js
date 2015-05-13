@@ -36,6 +36,6 @@ var CitySelect = React.createClass({displayName: "CitySelect",
 });
 
 React.render(
-    React.createElement(CitySelect, {source: "api/city"}),
+    React.createElement(CitySelect, {source: "api/cities/all"}),
     document.getElementById('react-city-select')
 );
