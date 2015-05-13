@@ -1,0 +1,503 @@
+.jcf-select {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+.jcf-select select {
+	z-index: 1;
+	left: 0;
+	top: 0;
+}
+.jcf-select .jcf-select-text {
+	cursor: default;
+	display: block;
+}
+.jcf-select .jcf-select-text span {
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width:100%;
+}
+body > .jcf-select-drop {
+	position: absolute;
+	margin: -1px 0 0;
+	z-index: 9998;
+}
+body > .jcf-select-drop.jcf-drop-flipped {
+	margin: 1px 0 0;
+}
+.jcf-select .jcf-select-drop {
+	position: absolute;
+	margin-top: 0;
+	z-index: 9999;
+	top: 100%;
+	left: -1px;
+	right: -1px;
+}
+.jcf-select .jcf-drop-flipped {
+	bottom: 100%;
+	top: auto;
+}
+
+/* custom simple select styles */
+.jcf-select-simple-select {
+	float:left;
+	position: relative;
+	background: #fff;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	width:210px;
+	height: 50px;
+}
+.jcf-select-simple-select .jcf-select-text {
+	font-size: 16px;
+	line-height: 50px;
+	margin: 0 25px 0 10px;
+}
+.jcf-select-simple-select .jcf-select-text span {
+	display:inline-block;
+	vertical-align:top;
+	padding:0 0 0 25px;
+	position:relative;
+	color:#1b1513;
+}
+.jcf-select-city-chooser .jcf-select-text span:after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:50%;
+	margin:-10px 0 0;
+	width:15px;
+	height:19px;
+	background:url(../images/sprite.png) no-repeat 0 -24px;
+}
+.jcf-select-simple-select .jcf-select-opener {
+	position: absolute;
+	text-align: center;
+	background:url('../images/sprite.png') no-repeat -35px 0;
+	width: 9px;
+	height:6px;
+	right: 13px;
+	top: 23px;
+}
+.jcf-select-simple-select .jcf-select-drop {
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+
+
+/* custom bordered select styles */
+.jcf-select.jcf-select-bordered-select {
+	float:left;
+	position: relative;
+	background: #fff;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #a3a3a3;
+	height: 34px;
+	margin:0 25px 20px 0;
+}
+.jcf-select-bordered-select.jcf-drop-active {border:1px solid #ffba00;}
+.jcf-select-bordered-select.jcf-drop-active .jcf-select-text span { color:#1b1513;}
+.jcf-select-bordered-select.jcf-select-short {width:173px;}
+.jcf-select-bordered-select.jcf-select-middle { width:273px;}
+.jcf-select-bordered-select.jcf-select-long { width:373px;}
+.jcf-select-bordered-select .jcf-select-text {
+	font-size: 13px;
+	line-height: 34px;
+	margin: 0 25px 0 10px;
+}
+.jcf-select-bordered-select .jcf-select-text span {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	color:#a2a2a2;
+}
+.jcf-select-bordered-select .jcf-select-opener {
+	position: absolute;
+	text-align: center;
+	background:url('../images/sprite.png') no-repeat -35px 0;
+	width: 9px;
+	height:6px;
+	right: 8px;
+	top: 15px;
+}
+.jcf-select-bordered-select .jcf-select-drop {
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+}
+
+
+
+/* custom brown select styles */
+.jcf-select.jcf-select-brown {
+	float:left;
+	position: relative;
+	background: #29201c;
+	height: 54px;
+	width:100%;
+}
+.jcf-select-brown .jcf-select-text {
+	font-size: 14px;
+	line-height: 16px;
+	margin: 10px 38px 0 22px;
+	white-space:normal;
+}
+.jcf-select-brown .jcf-select-text span {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	white-space:normal;
+	color:#ea9a03;
+}
+.jcf-select-brown .jcf-select-opener {
+	position: absolute;
+	text-align: center;
+	background:url('../images/sprite.png') no-repeat -23px 0;
+	width: 9px;
+	height:6px;
+	right: 15px;
+	top: 24px;
+}
+
+
+/* custom yellow select styles */
+.jcf-select.jcf-select-yellow-select {
+	float:left;
+	position: relative;
+	background: #fff;
+	height: 34px;
+	border-color:#a3a3a3;
+	border-width:1px;
+	margin:0 0 0 -1px;
+	border-style:solid;
+	-webkit-border-radius:0 2px 2px 0;
+	-moz-border-radius:0 2px 2px 0;
+	border-radius:0 2px 2px 0;
+	width:69px;
+}
+.jcf-select.jcf-select-yellow-select.jcf-select-checked {
+	background:#ffba00;
+	-webkit-box-shadow:inset 2px 2px 2px rgba(0, 0, 0, .20) ;
+	box-shadow:inset 2px 2px 2px rgba(0, 0, 0, .20);
+	border:none;
+	padding:1px 1px 1px 0;
+}
+.jcf-select.jcf-drop-active.jcf-select-yellow-select {
+	background: #ffa700;
+	border-color:#ffa700;
+}
+.jcf-select-yellow-select .jcf-select-text {
+	font-size: 14px;
+	line-height: 34px;
+	text-align:center;
+	white-space:normal;
+}
+.jcf-select-yellow-select .jcf-select-text span {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	color:#352f2c;
+}
+.jcf-select.jcf-select-yellow-select.jcf-select-checked .jcf-select-text span {color:#fff;}
+.jcf-select-yellow-select.jcf-drop-active .jcf-select-text span { color:#fff;}
+
+
+
+
+/* multiple select styles */
+.jcf-select-simple-select .jcf-list-box {
+	overflow: hidden;
+	display: inline-block;
+	border: 1px solid #b8c3c9;
+	min-width: 200px;
+	margin: 0 15px;
+}
+
+/* select options styles */
+.jcf-list .jcf-list-content {
+	vertical-align: top;
+	display: inline-block;
+	overflow: auto;
+	width: 100% !important;
+}
+.jcf-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.jcf-list ul li {
+	overflow: hidden;
+	display: block;
+}
+.jcf-list .jcf-overflow {
+	overflow: auto;
+}
+
+/*simple select options styles */
+.jcf-select-simple-select .jcf-list {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background: #fff;
+	line-height: 18px;
+	font-size: 15px;
+	width: 100%;
+	-webkit-box-shadow:0 5px 10px rgba(57, 40, 26, .20) ;
+	box-shadow:0 5px 10px rgba(57, 40, 26, .20);
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	overflow:hidden;
+	padding:7px 0;
+}
+.jcf-select-simple-select .jcf-list .jcf-option {
+	overflow: hidden;
+	cursor: default;
+	display: block;
+	padding: 4px 5px 4px 35px;
+	color:#1b1513;
+	height: 1%;
+}
+.jcf-select-simple-select .jcf-list .jcf-disabled {
+	background: #fff !important;
+	color: #aaa !important;
+}
+.jcf-select-simple-select .jcf-list .jcf-hover,
+.jcf-select-simple-select .jcf-list .jcf-selected {
+	background: #ffa700;
+	color: #fff;
+}
+.jcf-select-simple-select .jcf-list .jcf-optgroup-caption {
+	white-space: nowrap;
+	font-weight: bold;
+	display: block;
+	padding: 5px 9px;
+	cursor: default;
+	color: #000;
+}
+.jcf-select-simple-select .jcf-list .jcf-optgroup .jcf-option {
+	padding-left: 30px;
+}
+
+
+/*bordered select options styles */
+.jcf-select-bordered-select .jcf-list {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background: #fff;
+	line-height: 16px;
+	font-size: 13px;
+	width:100%;
+	-webkit-box-shadow:0 5px 10px rgba(57, 40, 26, .20) ;
+	box-shadow:0 5px 10px rgba(57, 40, 26, .20);
+	border:1px solid #ffba00;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	overflow:hidden;
+	padding:7px 0;
+}
+.jcf-select-bordered-select .jcf-list .jcf-option {
+	overflow: hidden;
+	cursor: default;
+	display: block;
+	padding: 5px 5px 5px 11px;
+	color:#1b1513;
+	height: 1%;
+}
+.jcf-select-bordered-select .jcf-list .jcf-disabled {
+	background: #fff !important;
+	color: #aaa !important;
+}
+.jcf-select-bordered-select .jcf-list .jcf-hover,
+.jcf-select-bordered-select .jcf-list .jcf-selected {
+	background: #ffa700;
+	color: #fff;
+}
+.jcf-select-bordered-select .jcf-list .jcf-optgroup-caption {
+	white-space: nowrap;
+	font-weight: bold;
+	display: block;
+	padding: 5px 9px;
+	cursor: default;
+	color: #000;
+}
+.jcf-select-bordered-select .jcf-list .jcf-optgroup .jcf-option {
+	padding-left: 20px;
+}
+
+
+
+/*brown select options styles */
+.jcf-select-brown .jcf-list {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background: #29201c;
+	font-size: 14px;
+	line-height: 16px;
+	width:100%;
+	overflow:hidden;
+	padding:6px 0;
+}
+.jcf-select-brown .jcf-list .jcf-option {
+	white-space: normal;
+	overflow: hidden;
+	cursor: default;
+	display: block;
+	padding: 7px 38px 6px 22px;
+	color:#96857c;
+	height: 1%;
+}
+.jcf-select-brown .jcf-list .jcf-disabled {
+	background: #fff !important;
+	color: #aaa !important;
+}
+.jcf-select-brown .jcf-list .jcf-selected {color:#ea9a03;}
+.jcf-select-brown .jcf-list .jcf-hover {
+	background: #ffba00;
+	color: #fff;
+}
+
+/*yellow select options styles */
+.jcf-select-yellow-select .jcf-list {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background: #ffa700;
+	font-size: 14px;
+	line-height: 16px;
+	width:100%;
+	overflow:hidden;
+	padding:6px 0;
+}
+.jcf-select-yellow-select .jcf-list .jcf-option {
+	white-space: normal;
+	overflow: hidden;
+	cursor: default;
+	display: block;
+	padding: 6px 5px;
+	color:#fff;
+	text-align:center;
+	height: 1%;
+}
+.jcf-select-yellow-select .jcf-list .jcf-disabled {
+	background: #fff !important;
+	color: #aaa !important;
+}
+.jcf-select-yellow-select .jcf-list .jcf-selected {color:#fff;}
+.jcf-select-yellow-select .jcf-list .jcf-hover {
+	background: #ffba00;
+	color: #fff;
+}
+
+
+
+
+/* custom scrollbars styles */
+.jcf-scrollable-wrapper {
+	box-sizing: content-box;
+	position: relative;
+}
+.jcf-scrollbar-vertical {
+	position: absolute;
+	cursor: default;
+	width: 21px;
+	bottom: 0;
+	right: 0;
+	top: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-dec,
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+	height: 7px;
+	width: 7px;
+	left: 0;
+	top: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+	top: auto;
+	bottom: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-handle {
+	background: #c4c4c4;
+	height: 1px;
+	width: 7px;
+}
+.jcf-scrollbar-horizontal {
+	position: absolute;
+	background: #e3e3e3;
+	right: auto;
+	top: auto;
+	left: 0;
+	bottom: 0;
+	width: 1px;
+	height: 21px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-dec,
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+	background: #bbb;
+	height: 7px;
+	width: 7px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+	left: auto;
+	right: 0;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-slider {
+	display: inline-block;
+	position: relative;
+	height: 7px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-handle {
+	position: absolute;
+	background: #888;
+	height: 7px;
+}
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-handle {
+	visibility: hidden;
+}
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-dec, 
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-inc {
+	background: #e3e3e3;
+}
+/* common custom form elements styles */
+.location-holder .jcf-scrollable-wrapper { float:left;}
+
+
+
+
+
+@media only screen and (max-width: 1224px){
+	.jcf-select-city-chooser { height:45px;}
+	.jcf-select-city-chooser .jcf-select-text {
+		font-size:15px;
+		line-height:45px;
+	}
+	.jcf-select-city-chooser .jcf-select-opener { top:20px;}
+	.jcf-select.jcf-select-bordered-select { margin:0 20px 20px 0;}
+	.theater-filter.afisha .jcf-select-bordered-select.jcf-select-middle,
+	.theater-filter.afisha .jcf-select-bordered-select.jcf-select-short { margin:0 20px 20px 0;}
+	.location-holder .jcf-scrollable-wrapper {
+		width:49.1% !important;
+	}
+}
+@media only screen and (max-width: 1023px){
+	.jcf-select-bordered-select.jcf-select-middle { width:175px;}
+	.afisha .jcf-select-bordered-select.jcf-select-middle { width:160px;}
+	.afisha .jcf-select-bordered-select.jcf-select-short { width:158px;}
+	.location-holder .jcf-scrollable-wrapper {
+		width:100% !important;
+	}
+}
