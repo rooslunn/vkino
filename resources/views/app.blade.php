@@ -10,18 +10,18 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/jquery.main.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/react-with-addons.min.js') }}"></script>
-    <script>
-        $(function() {
-            var hint = $('.choose-city');
-            hint.find('.close-chooser').click(function(e) {
-                e.preventDefault();
-                hint.fadeOut(300);
-            });
-        })
-    </script>
+    {{--<script type="text/javascript" src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('/js/jquery.main.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('/js/react-with-addons.min.js') }}"></script>--}}
+    {{--<script>--}}
+        {{--$(function() {--}}
+            {{--var hint = $('.choose-city');--}}
+            {{--hint.find('.close-chooser').click(function(e) {--}}
+                {{--e.preventDefault();--}}
+                {{--hint.fadeOut(300);--}}
+            {{--});--}}
+        {{--})--}}
+    {{--</script>--}}
 
 </head>
 <body>
@@ -583,7 +583,19 @@
         </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react-with-addons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/js/jquery.main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/app/vkino.js') }}"></script>
+    <script>
+        $(function() {
+            var hint = $('.choose-city');
+            hint.find('.close-chooser').click(function(e) {
+                e.preventDefault();
+                hint.fadeOut(300);
+            });
+        })
+    </script>
 
 </body>
 </html>
