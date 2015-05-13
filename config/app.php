@@ -149,7 +149,8 @@ return [
          * VKino Service Providers
          */
         'App\Providers\Gateway\HttpServiceProvider',
-        'App\Providers\Gateway\GatewayServiceProvider'
+        'App\Providers\Gateway\GatewayServiceProvider',
+        'App\Providers\Storage\CacheServiceProvider'
     ],
 
     /*
