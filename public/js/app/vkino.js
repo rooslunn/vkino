@@ -57,7 +57,7 @@ var CitySelect = React.createClass({displayName: "CitySelect",
     }
 });
 
-var FilmBoxHolder = React.createClass({displayName: "FilmBoxHolder",
+var ShowActual = React.createClass({displayName: "ShowActual",
     _sourceUrlTemplate: "api/cities/[cityId]/shows/actual",
     getInitialState: function () {
         return {
@@ -127,6 +127,6 @@ var citySelectComponent = React.render(
 );
 
 React.render(
-    React.createElement(FilmBoxHolder, null),
-    document.querySelector('.film-box-holder')
+    React.createElement(ShowActual, null),
+    document.getElementById('show-actual')
 );

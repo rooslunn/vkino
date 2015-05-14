@@ -57,7 +57,7 @@ var CitySelect = React.createClass({
     }
 });
 
-var FilmBoxHolder = React.createClass({
+var ShowActual = React.createClass({
     _sourceUrlTemplate: "api/cities/[cityId]/shows/actual",
     getInitialState: function () {
         return {
@@ -127,6 +127,6 @@ var citySelectComponent = React.render(
 );
 
 React.render(
-    <FilmBoxHolder />,
-    document.querySelector('.film-box-holder')
+    <ShowActual />,
+    document.getElementById('show-actual')
 );

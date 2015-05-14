@@ -263,146 +263,14 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="film-box-holder">
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-05.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Голодные игры: Сойка- пересмешница...</span></a>
-                                <ul class="technologies-list">
-                                    <li>4DX</li>
-                                    <li>3D</li>
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-06.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Интерстеллар</span></a>
-                                <ul class="technologies-list">
-                                    <li>4DX</li>
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-07.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Город героев</span></a>
-                                <ul class="technologies-list">
-                                    <li>3D</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-08.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>С любовью, Рози</span></a>
-                                <ul class="technologies-list">
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-09.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>День дурака</span></a>
-                                <ul class="technologies-list">
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-10.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Уиджи: Доска Дьявола</span></a>
-                                <ul class="technologies-list">
-                                    <li>ATMOS</li>
-                                    <li>HFR</li>
-                                    <li>Imax</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-11.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Василиса</span></a>
-                                <ul class="technologies-list">
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-12.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Пирамида</span></a>
-                                <ul class="technologies-list">
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Любит не любит</span></a>
-                                <ul class="technologies-list">
-                                    <li>3D</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-13.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>С любовью, Рози</span></a>
-                                <ul class="technologies-list">
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-06.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Интерстеллар</span></a>
-                                <ul class="technologies-list">
-                                    <li>4DX</li>
-                                    <li>Imax</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-07.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Город героев</span></a>
-                                <ul class="technologies-list">
-                                    <li>3D</li>
-                                    <li>2D</li>
-                                </ul>
-                                <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                            </div>
-                        </div>
+                        <span id="show-actual"></span>
                     </div>
                     <div class="show-all-holder">
                         <a class="btn-show" href="main-page.html#"><span>Показать все (36)</span></a>
                     </div>
+
                 </div>
             </section>
             <section class="premiere-movies soon">
