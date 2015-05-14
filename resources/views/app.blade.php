@@ -164,59 +164,7 @@
                             <h3>Премьеры недели</h3>
                             <div class="carousel">
                                 <div class="mask">
-                                    <div class="slideset">
-                                        <div class="slide">
-                                            <div class="film-box">
-                                                <div class="img-holder"><a href="main-page.html#"><img src="images/img-01.jpg" alt="image description"/></a></div>
-                                                <div class="sub-info">
-                                                    <ul class="technologies-list">
-                                                        <li>4DX</li>
-                                                        <li>3d</li>
-                                                        <li>Imax</li>
-                                                        <li>2D</li>
-                                                    </ul>
-                                                    <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide">
-                                            <div class="film-box">
-                                                <div class="img-holder"><a href="main-page.html#"><img src="images/img-02.jpg" alt="image description"/></a></div>
-                                                <div class="sub-info">
-                                                    <ul class="technologies-list">
-                                                        <li>Imax</li>
-                                                        <li>2D</li>
-                                                    </ul>
-                                                    <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide">
-                                            <div class="film-box">
-                                                <div class="img-holder"><a href="main-page.html#"><img src="images/img-01.jpg" alt="image description"/></a></div>
-                                                <div class="sub-info">
-                                                    <ul class="technologies-list">
-                                                        <li>4DX</li>
-                                                        <li>3d</li>
-                                                        <li>Imax</li>
-                                                        <li>2D</li>
-                                                    </ul>
-                                                    <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide">
-                                            <div class="film-box">
-                                                <div class="img-holder"><a href="main-page.html#"><img src="images/img-02.jpg" alt="image description"/></a></div>
-                                                <div class="sub-info">
-                                                    <ul class="technologies-list">
-                                                        <li>Imax</li>
-                                                        <li>2D</li>
-                                                    </ul>
-                                                    <a class="btn-buy" href="main-page.html#"><span>Купить билеты</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="show-premiere" class="slideset">
                                     </div>
                                 </div>
                                 <a class="btn-prev" href="main-page.html#">Previous</a>
