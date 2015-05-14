@@ -10,19 +10,6 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-    {{--<script type="text/javascript" src="{{ asset('/js/jquery-1.11.2.min.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('/js/jquery.main.js') }}"></script>--}}
-    {{--<script type="text/javascript" src="{{ asset('/js/react-with-addons.min.js') }}"></script>--}}
-    {{--<script>--}}
-        {{--$(function() {--}}
-            {{--var hint = $('.choose-city');--}}
-            {{--hint.find('.close-chooser').click(function(e) {--}}
-                {{--e.preventDefault();--}}
-                {{--hint.fadeOut(300);--}}
-            {{--});--}}
-        {{--})--}}
-    {{--</script>--}}
-
 </head>
 <body>
     <div id="wrapper">
@@ -67,7 +54,12 @@
             <div class="main-slider">
                 <form class="search-form custom-form" action="main-page.html#"> <!--При добавлении класса .focus будет появлятся список совпадений поиска-->
                     <fieldset>
-                        <span id="react-city-select"></span>
+
+                        <span id="react-city-select">
+                            <select class="simple-select city-chooser">
+                            </select>
+                        </span>
+
                         <!--Включение класса на drop-search проявит drop-search-->
                         <div class="drop-search">
                             <input type="text" placeholder="Поиск по названию фильма или кинотеатра">
