@@ -1,132 +1,153 @@
+(function ($) {
 
-var CitySelect = React.createClass({displayName: "CitySelect",
-    _listeners: [],
-    loadCities: function () {
-        $.ajax({
-            url: this.props.source,
-            dataType: 'json',
-            cache: false,
-            success: function (data) {
-                if (this.isMounted()) {
-                    this.setState({data: data.city});
-                }
-            }.bind(this),
-            error: function (xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-    },
-    getInitialState: function () {
-        return {data: []};
-    },
-    componentDidMount: function () {
-        this.loadCities();
-    },
-    addChangeListener: function (listener) {
-        this._listeners.push(listener);
-        console.log('listener added', listener);
-    },
-    removeChangeListener: function (listener) {
-        this._listeners = this._listeners.filter(function (l) {
-            return listener !== l;
-        });
-        console.log('listener removed', listener);
-    },
-    notifyChange: function (data) {
-        this._listeners.forEach(function (listener) {
-            listener.notify(data);
-        })
-    },
-    changeHandler: function (e) {
-        e.preventDefault();
-        var cityId = e.target.value;
-        console.log('city changed:', cityId);
-        this.notifyChange(cityId);
-    },
-    render: function () {
-        var cityOptions = this.state.data.map(function (city) {
-            return (
-                React.createElement("option", {key: city.id, value: city.id}, city.name)
+    "use strict";
+
+    var Gateway = React.createClass({displayName: "Gateway",
+        statics: {
+            getJSON: function (url, cbok, cbfail) {
+                $.ajax({
+                    url: url,
+                    dataType: 'json',
+                    cache: false,
+                    success: cbok,
+                    error: cbfail
+                });
+            }
+        },
+        render: function () {}
+    });
+
+    var CitySelect = React.createClass({displayName: "CitySelect",
+        _listeners: [],
+        loadCities: function () {
+            Gateway.getJSON(this.props.source,
+                function (data) {
+                    if (this.isMounted()) {
+                        this.setState({data: data.city});
+                    }
+                }.bind(this),
+                function (xhr, status, err) {
+                    console.error(this.props.url, status, err.toString());
+                }.bind(this)
             );
-        });
-        return (
-            React.createElement("select", {className: "simple-select city-chooser", onChange: this.changeHandler}, 
-                cityOptions
-            )
-        );
-    }
-});
+        },
+        getInitialState: function () {
+            return {data: []};
+        },
+        componentDidMount: function () {
+            this.loadCities();
+        },
+        addChangeListener: function (listener) {
+            this._listeners.push(listener);
+            console.log('listener added', listener);
+        },
+        removeChangeListener: function (listener) {
+            this._listeners = this._listeners.filter(function (l) {
+                return listener !== l;
+            });
+            console.log('listener removed', listener);
+        },
+        notifyChange: function (data) {
+            this._listeners.forEach(function (listener) {
+                listener.notify(data);
+            })
+        },
+        changeHandler: function (e) {
+            e.preventDefault();
+            var cityId = e.target.value;
+            console.log('city changed:', cityId);
+            this.notifyChange(cityId);
+        },
+        render: function () {
+            var cityOptions = this.state.data.map(function (city) {
+                return (
+                    React.createElement("option", {key: city.id, value: city.id}, city.name)
+                );
+            });
+            return (
+                React.createElement("select", {className: "simple-select city-chooser", onChange: this.changeHandler}, 
+                    cityOptions
+                )
+            );
+        }
+    });
 
-var ShowActual = React.createClass({displayName: "ShowActual",
-    _sourceUrlTemplate: "api/cities/[cityId]/shows/actual",
-    getInitialState: function () {
-        return {
-            data: []
+    function ReactShowTemplate (sourceUrl, setDataFunction, renderFunction) {
+        this._sourceUrlTemplate = sourceUrl;
+        this.getInitialState = function () {
+                return {
+                    data: []
+                };
         };
-    },
-    loadShows: function (cityId) {
-        $.ajax({
-            url: this._sourceUrlTemplate.replace('[cityId]', cityId),
-            dataType: 'json',
-            cache: false,
-            success: function (data) {
+        this.loadShows = function (cityId) {
+            var url = this._sourceUrlTemplate.replace('[cityId]', cityId);
+            Gateway.getJSON(url, setDataFunction.bind(this),
+                function (xhr, status, err) {
+                    console.error(this.props.url, status, err.toString());
+                }.bind(this)
+            );
+        };
+        this.notify = function (data) {
+            this.loadShows(data);
+            console.log('subject sent:', data);
+        };
+        this.componentDidMount = function () {
+            citySelectComponent.addChangeListener(this);
+        };
+        this.componentWillUnmount = function () {
+            citySelectComponent.removeChangeListener(this);
+        };
+        this.render = renderFunction;
+    }
+
+    var ShowActual = React.createClass(
+        new ReactShowTemplate("api/cities/[cityId]/shows/actual",
+            function setDataCB (data) {
                 if (this.isMounted()) {
                     this.setState({data: data.shows.show});
                 }
-            }.bind(this),
-            error: function (xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-    },
-    notify: function (data) {
-        this.loadShows(data);
-        console.log('subject sent:', data);
-    },
-    componentDidMount: function () {
-        citySelectComponent.addChangeListener(this);
-    },
-    componentWillUnmount: function () {
-        citySelectComponent.removeChangeListener(this);
-    },
-    render: function () {
-        var shows = this.state.data.map(function (show) {
-            return (
-                React.createElement("div", {className: "film-box", key: show.id}, 
-                    React.createElement("div", {className: "img-holder"}, 
-                        React.createElement("a", {href: "main-page.html#"}, 
-                            React.createElement("img", {src: show.posterUrl, alt: "image description"})
-                        )
-                    ), 
-                    React.createElement("div", {className: "sub-info"}, 
-                        React.createElement("a", {href: "main-page.html#", className: "film-title"}, 
-                            React.createElement("span", null, show.name)
-                        ), 
-                        React.createElement("ul", {className: "technologies-list"}, 
-                            React.createElement("li", null, "4DX"), 
-                            React.createElement("li", null, "3D"), 
-                            React.createElement("li", null, "Imax"), 
-                            React.createElement("li", null, "2D")
-                        ), 
-                        React.createElement("a", {className: "btn-buy", href: "main-page.html#"}, 
-                            React.createElement("span", null, "Купить билеты")
+            },
+            function render () {
+                var shows = this.state.data.map(function (show) {
+                    return (
+                        React.createElement("div", {className: "film-box", key: show.id}, 
+                            React.createElement("div", {className: "img-holder"}, 
+                                React.createElement("a", {href: "main-page.html#"}, 
+                                    React.createElement("img", {src: show.posterUrl, alt: "image description"})
+                                )
+                            ), 
+                            React.createElement("div", {className: "sub-info"}, 
+                                React.createElement("a", {href: "main-page.html#", className: "film-title"}, 
+                                    React.createElement("span", null, show.name)
+                                ), 
+                                React.createElement("ul", {className: "technologies-list"}, 
+                                    React.createElement("li", null, "4DX"), 
+                                    React.createElement("li", null, "3D"), 
+                                    React.createElement("li", null, "Imax"), 
+                                    React.createElement("li", null, "2D")
+                                ), 
+                                React.createElement("a", {className: "btn-buy", href: "main-page.html#"}, 
+                                    React.createElement("span", null, "Купить билеты")
+                                )
+                            )
                         )
                     )
-                )
-            )
-        });
-        return (
-            React.createElement("span", null, shows)
-        );
-    }
-});
+                });
+                return (
+                    React.createElement("span", null, shows)
+                );
+            }
+        )
+    );
 
-var citySelectComponent = React.render(
-    React.createElement(CitySelect, {source: "api/cities/all"}),
-    document.getElementById('react-city-select')
-);
+    var citySelectComponent = React.render(
+        React.createElement(CitySelect, {source: "api/cities/all"}),
+        document.getElementById('react-city-select')
+    );
 
-React.render(
-    React.createElement(ShowActual, null),
-    document.getElementById('show-actual')
-);
+    React.render(
+        React.createElement(ShowActual, null),
+        document.getElementById('show-actual')
+    );
+
+})(jQuery);
