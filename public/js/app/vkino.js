@@ -1,5 +1,6 @@
 
 var CitySelect = React.createClass({displayName: "CitySelect",
+    _listeners: [],
     loadCities: function () {
         $.ajax({
             url: this.props.source,
@@ -21,10 +22,26 @@ var CitySelect = React.createClass({displayName: "CitySelect",
     componentDidMount: function () {
         this.loadCities();
     },
+    addChangeListener: function (listener) {
+        this._listeners.push(listener);
+        console.log('listener added', listener);
+    },
+    removeChangeListener: function (listener) {
+        this._listeners = this._listeners.filter(function (l) {
+            return listener !== l;
+        });
+        console.log('listener removed', listener);
+    },
+    notifyChange: function (data) {
+        this._listeners.forEach(function (listener) {
+            listener.notify(data);
+        })
+    },
     changeHandler: function (e) {
         e.preventDefault();
         var cityId = e.target.value;
-        console.log('changed to ', cityId);
+        console.log('city changed:', cityId);
+        this.notifyChange(cityId);
     },
     render: function () {
         var cityOptions = this.state.data.map(function (city) {
@@ -40,18 +57,16 @@ var CitySelect = React.createClass({displayName: "CitySelect",
     }
 });
 
-React.render(
-    React.createElement(CitySelect, {source: "api/cities/all"}),
-    document.getElementById('react-city-select')
-);
-
 var FilmBoxHolder = React.createClass({displayName: "FilmBoxHolder",
+    _sourceUrlTemplate: "api/cities/[cityId]/shows/actual",
     getInitialState: function () {
-        return {data: []};
+        return {
+            data: []
+        };
     },
-    loadShows: function () {
+    loadShows: function (cityId) {
         $.ajax({
-            url: this.props.source,
+            url: this._sourceUrlTemplate.replace('[cityId]', cityId),
             dataType: 'json',
             cache: false,
             success: function (data) {
@@ -64,8 +79,15 @@ var FilmBoxHolder = React.createClass({displayName: "FilmBoxHolder",
             }.bind(this)
         });
     },
+    notify: function (data) {
+        this.loadShows(data);
+        console.log('subject sent:', data);
+    },
     componentDidMount: function () {
-        this.loadShows();
+        citySelectComponent.addChangeListener(this);
+    },
+    componentWillUnmount: function () {
+        citySelectComponent.removeChangeListener(this);
     },
     render: function () {
         var shows = this.state.data.map(function (show) {
@@ -99,7 +121,12 @@ var FilmBoxHolder = React.createClass({displayName: "FilmBoxHolder",
     }
 });
 
+var citySelectComponent = React.render(
+    React.createElement(CitySelect, {source: "api/cities/all"}),
+    document.getElementById('react-city-select')
+);
+
 React.render(
-    React.createElement(FilmBoxHolder, {source: "api/cities/2252/shows/actual"}),
+    React.createElement(FilmBoxHolder, null),
     document.querySelector('.film-box-holder')
 );
