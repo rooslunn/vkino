@@ -140,6 +140,40 @@
         )
     );
 
+    var ShowSoon = React.createClass(
+        new ReactShowTemplate("api/cities/[cityId]/shows/soon",
+            function setDataCB (data) {
+                if (this.isMounted()) {
+                    this.setState({data: data['shows-soon'].show});
+                }
+            },
+            function render () {
+                var shows = this.state.data.map(function (show) {
+                    var releaseDate = new Date(show.releaseDate);
+                    var releaseDateString = 'c ' + releaseDate.toLocaleDateString();
+                    return (
+                        <div className="film-box" key={show.id}>
+                            <div className="img-holder">
+                                <a href="main-page.html#">
+                                    <img src={show.posterUrl} alt="image description"/>
+                                </a>
+                            </div>
+                            <div className="sub-info">
+                                <a href="main-page.html#" className="film-title">
+                                    <span>{show.name}</span>
+                                </a>
+                                <span className="date">{releaseDateString}</span>
+                            </div>
+                        </div>
+                    )
+                });
+                return (
+                    <span>{shows}</span>
+                );
+            }
+        )
+    );
+
     var citySelectComponent = React.render(
         <CitySelect source="api/cities/all" />,
         document.getElementById('react-city-select')
@@ -148,6 +182,11 @@
     React.render(
         <ShowActual />,
         document.getElementById('show-actual')
+    );
+
+    React.render(
+        <ShowSoon />,
+        document.getElementById('show-soon')
     );
 
 })(jQuery);

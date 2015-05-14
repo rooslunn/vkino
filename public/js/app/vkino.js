@@ -140,6 +140,40 @@
         )
     );
 
+    var ShowSoon = React.createClass(
+        new ReactShowTemplate("api/cities/[cityId]/shows/soon",
+            function setDataCB (data) {
+                if (this.isMounted()) {
+                    this.setState({data: data['shows-soon'].show});
+                }
+            },
+            function render () {
+                var shows = this.state.data.map(function (show) {
+                    var releaseDate = new Date(show.releaseDate);
+                    var releaseDateString = 'c ' + releaseDate.toLocaleDateString();
+                    return (
+                        React.createElement("div", {className: "film-box", key: show.id}, 
+                            React.createElement("div", {className: "img-holder"}, 
+                                React.createElement("a", {href: "main-page.html#"}, 
+                                    React.createElement("img", {src: show.posterUrl, alt: "image description"})
+                                )
+                            ), 
+                            React.createElement("div", {className: "sub-info"}, 
+                                React.createElement("a", {href: "main-page.html#", className: "film-title"}, 
+                                    React.createElement("span", null, show.name)
+                                ), 
+                                React.createElement("span", {className: "date"}, releaseDateString)
+                            )
+                        )
+                    )
+                });
+                return (
+                    React.createElement("span", null, shows)
+                );
+            }
+        )
+    );
+
     var citySelectComponent = React.render(
         React.createElement(CitySelect, {source: "api/cities/all"}),
         document.getElementById('react-city-select')
@@ -148,6 +182,11 @@
     React.render(
         React.createElement(ShowActual, null),
         document.getElementById('show-actual')
+    );
+
+    React.render(
+        React.createElement(ShowSoon, null),
+        document.getElementById('show-soon')
     );
 
 })(jQuery);

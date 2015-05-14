@@ -264,6 +264,7 @@
                         </div>
                     </div>
 
+                    {{--Now screening--}}
                     <div class="film-box-holder">
                         <span id="show-actual"></span>
                     </div>
@@ -275,113 +276,10 @@
             </section>
             <section class="premiere-movies soon">
                 <div class="content-holder">
+                    {{--Screening soon--}}
                     <h2 class="color-white">Скоро на экранах</h2>
                     <div class="film-box-holder">
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-05.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Голодные игры: Сойка- пересмешница...</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-06.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Интерстеллар</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-07.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Город героев</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-08.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>С любовью, Рози</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-09.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>День дурака</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-10.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Уиджи: Доска Дьявола</span></a>
-                                <span class="date">с 11 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-05.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Голодные игры: Сойка- пересмешница...</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-06.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Интерстеллар</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-07.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Город героев</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-08.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>С любовью, Рози</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-09.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>День дурака</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-10.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Уиджи: Доска Дьявола</span></a>
-                                <span class="date">с 11 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-05.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Голодные игры: Сойка- пересмешница...</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-06.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Интерстеллар</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
-                        <div class="film-box">
-                            <div class="img-holder"><a href="main-page.html#"><img src="images/img-07.jpg" alt="image description"/></a></div>
-                            <div class="sub-info">
-                                <a href="main-page.html#" class="film-title"><span>Город героев</span></a>
-                                <span class="date">с 4 декабря 2014</span>
-                            </div>
-                        </div>
+                        <span id="show-soon"></span>
                     </div>
                     <div class="show-all-holder">
                         <a class="btn-show" href="main-page.html#"><span>Показать все</span></a>
