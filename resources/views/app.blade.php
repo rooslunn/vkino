@@ -576,17 +576,24 @@
                     </div>
                 </div>
                 <div class="copy-info">
-                    <p>&copy; 2011–2014   Сервис онлайн покупки билетов в кинотеатры Украины Vkino.com.ua </p>
-                    <p>&copy; 2011–2014 <a href="main-page.html#">СейлСофт</a></p>
+                    <p>&copy; 2011–{{ date('Y') }}   Сервис онлайн покупки билетов в кинотеатры Украины Vkino.com.ua </p>
+                    <p>&copy; 2011–{{ date('Y') }} <a href="main-page.html#">СейлСофт</a></p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react-with-addons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    @if (env('APP_ENV') === 'production')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"></script>
+    @else
+        <script type="text/javascript" src="{{ asset('/js/jquery-2.1.4.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/js/react-with-addons.js') }}"></script>
+    @endif
+
     <script type="text/javascript" src="{{ asset('/js/jquery.main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/app/vkino.js') }}"></script>
+
     <script>
         $(function() {
             var hint = $('.choose-city');
