@@ -227,10 +227,59 @@
         )
     );
 
+    var SHOW_HOT_COUNT = 6;
+
+    var ShowHot = React.createClass(
+        new ReactShowTemplate("api/cities/[cityId]/shows/actual",
+            function setDataCB (data) {
+                if (this.isMounted()) {
+                    this.setState({data: data.shows.show.slice(0, SHOW_HOT_COUNT)});
+                }
+            },
+            function render () {
+                var shows = this.state.data.map(function (show) {
+                    return (
+                        <div className="slide"  key={show.id}>
+                            <div className="film-box">
+                                <div className="img-holder">
+                                    <a href="main-page.html#"><img src={show.posterUrl} alt="image description"/>
+                                    </a>
+                                </div>
+                                <div className="sub-info">
+                                    <ul className="technologies-list">
+                                        <li>4DX</li>
+                                        <li>3d</li>
+                                        <li>Imax</li>
+                                        <li>2D</li>
+                                    </ul>
+                                    <a className="btn-buy" href="main-page.html#">
+                                        <span>Купить билеты</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                });
+                return (
+                    <span>{shows}</span>
+                );
+            }
+        )
+    );
 
     var citySelectComponent = React.render(
         <CitySelect source="api/cities/all" />,
         document.getElementById('react-city-select')
+    );
+
+    React.render(
+        <ShowPremiere />,
+        document.getElementById('show-premiere')
+    );
+
+    React.render(
+        <ShowHot />,
+        document.getElementById('show-hot')
     );
 
     React.render(
@@ -243,9 +292,5 @@
         document.getElementById('show-soon')
     );
 
-    React.render(
-        <ShowPremiere />,
-        document.getElementById('show-premiere')
-    );
 
 })(jQuery);

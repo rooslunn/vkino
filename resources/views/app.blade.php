@@ -176,7 +176,7 @@
                             <h3>Самое популярное</h3>
                             <div class="carousel">
                                 <div class="mask">
-                                    <div class="slideset">
+                                    <div  id="show-hot" class="slideset">
                                         <div class="slide">
                                             <div class="film-box">
                                                 <div class="img-holder"><a href="main-page.html#"><img src="images/img-03.jpg" alt="image description"/></a></div>
